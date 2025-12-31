@@ -1,6 +1,8 @@
 # fffffast Translate
 
 一款轻量级的 Chrome 浏览器翻译扩展，专为英语学习者设计。鼠标悬停即可快速翻译单词，让你在阅读英文文章、文档时更加流畅，提升英语学习效率。
+![示例](https://github.com/user-attachments/assets/f39a4c27-375d-4e1a-9f72-2bd45df01f71)
+
 
 ## 功能特点
 
