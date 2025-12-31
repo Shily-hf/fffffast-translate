@@ -68,7 +68,3 @@ fffffast-translate/
 ├── options.html/js/css # 设置页面
 └── styles.css          # 内容样式
 ```
-
-## License
-
-MIT
