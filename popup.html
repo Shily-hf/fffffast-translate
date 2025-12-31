@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>翻译设置</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <div class="header">
+      <h1>🌐 翻译设置</h1>
+    </div>
+
+    <div class="main-content">
+      <div class="form-group">
+        <label for="translatorSelect">选择翻译源:</label>
+        <select id="translatorSelect">
+          <option value="google">Google Translate（免费）</option>
+          <option value="deepl">DeepL（需要API）</option>
+          <option value="youdao">有道翻译（需要API）</option>
+          <option value="baidu">百度翻译（需要API）</option>
+        </select>
+      </div>
+
+      <!-- DeepL 配置 -->
+      <div class="api-config" id="deeplConfig" style="display: none;">
+        <div class="form-group">
+          <label for="deeplApiKey">API Key:</label>
+          <div class="password-wrapper">
+            <input type="password" id="deeplApiKey" placeholder="输入 DeepL API Key">
+            <span class="toggle-password" data-target="deeplApiKey">👁️</span>
+          </div>
+        </div>
+        <div class="api-link">
+          <a href="https://www.deepl.com/pro-api" target="_blank">🔗 获取 DeepL API</a>
+        </div>
+      </div>
+
+      <!-- 有道翻译配置 -->
+      <div class="api-config" id="youdaoConfig" style="display: none;">
+        <div class="form-group">
+          <label for="youdaoAppId">APP ID:</label>
+          <input type="text" id="youdaoAppId" placeholder="输入 APP ID">
+        </div>
+        <div class="form-group">
+          <label for="youdaoAppSecret">APP Secret:</label>
+          <div class="password-wrapper">
+            <input type="password" id="youdaoAppSecret" placeholder="输入 APP Secret">
+            <span class="toggle-password" data-target="youdaoAppSecret">👁️</span>
+          </div>
+        </div>
+        <div class="api-link">
+          <a href="https://ai.youdao.com/" target="_blank">🔗 获取有道翻译 API</a>
+        </div>
+      </div>
+
+      <!-- 百度翻译配置 -->
+      <div class="api-config" id="baiduConfig" style="display: none;">
+        <div class="form-group">
+          <label for="baiduAppId">APP ID:</label>
+          <input type="text" id="baiduAppId" placeholder="输入 APP ID">
+        </div>
+        <div class="form-group">
+          <label for="baiduSecretKey">密钥:</label>
+          <div class="password-wrapper">
+            <input type="password" id="baiduSecretKey" placeholder="输入密钥">
+            <span class="toggle-password" data-target="baiduSecretKey">👁️</span>
+          </div>
+        </div>
+        <div class="api-link">
+          <a href="https://fanyi-api.baidu.com/" target="_blank">🔗 获取百度翻译 API</a>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="saveBtn" class="btn-primary">保存</button>
+        <button id="testBtn" class="btn-secondary">测试</button>
+      </div>
+
+      <div id="status" class="status"></div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

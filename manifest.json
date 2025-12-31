@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "fffffast Translate",
+  "version": "1.0.0",
+  "description": "鼠标悬停取词翻译，轻松翻译网页中的英文单词 | fffffast to translate English words instantly",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://translate.googleapis.com/*",
+    "https://api-free.deepl.com/*",
+    "https://openapi.youdao.com/*",
+    "https://fanyi-api.baidu.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "翻译设置"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "options_page": "options.html"
+}

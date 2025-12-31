@@ -1,0 +1,64 @@
+/* 1. 下划线样式 */
+#my-trans-highlight {
+  position: absolute;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2); /* 浅黑灰色下划线 */
+  pointer-events: none; /* 关键！让鼠标可以穿透它选文字 */
+  z-index: 999999;
+  display: none; /* 默认隐藏 */
+  transition: all 0.1s ease-out; /* 丝滑动画 */
+}
+
+/* 2. 翻译弹窗：黑色背景白字 */
+#my-trans-popup {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: sans-serif;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  z-index: 1000000;
+  display: none;
+  max-width: 300px;
+  line-height: 1.4;
+}
+
+/* 弹窗下面的小三角（弹窗在上方时） */
+#my-trans-popup::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* 在底部 */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+/* 弹窗在下方时，小三角在顶部指向上 */
+#my-trans-popup.below::after {
+  top: auto;
+  bottom: 100%; /* 在顶部 */
+  border-color: transparent transparent #333 transparent;
+}
+
+/* 3. 状态提示框（ESC键切换提示） */
+#my-trans-status-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  z-index: 10000000;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  font-weight: 500;
+}
